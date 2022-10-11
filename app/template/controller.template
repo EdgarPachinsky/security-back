@@ -1,0 +1,19 @@
+import __MODEL_NAME__Repository from "../../db/repository/__MODEL_NAME__.repository.js"
+
+export default {
+
+    save: async (req, res) => {
+        const result = await __MODEL_NAME__Repository.save(req.body);
+        res.send(result);
+    },
+
+    delete: async (req, res) => {
+        const result = await __MODEL_NAME__Repository.delete(req.body);
+        res.send(result);
+    },
+
+    list: async (req, res) => {
+        const result = await __MODEL_NAME__Repository.list();
+        res.send(result);
+    },
+};

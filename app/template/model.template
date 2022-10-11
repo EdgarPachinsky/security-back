@@ -1,0 +1,15 @@
+import connection from "../connect.js"
+import schemaOptions from "../../app/constant/schema_constants.js"
+
+const mongoose = connection.getMongoose()
+const Schema = mongoose.Schema;
+
+const __MODEL_NAME__UPPERCASESchema = new Schema({
+
+    name:{
+        type: String,
+    },
+}, schemaOptions);
+
+const __MODEL_NAME__UPPERCASE = mongoose.model('__MODEL_NAME__', __MODEL_NAME__UPPERCASESchema);
+export default __MODEL_NAME__UPPERCASE;

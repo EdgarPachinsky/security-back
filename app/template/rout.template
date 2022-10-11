@@ -1,0 +1,12 @@
+import express from "express";
+const router = express.Router();
+
+import __MODEL_NAME___controller from "../controller/__MODEL_NAME__.controller.js"
+
+let prefix = '/__MODEL_NAME__'
+
+router.post('/save', __MODEL_NAME___controller.save)
+router.delete('/delete',__MODEL_NAME___controller.delete)
+router.get('/list', __MODEL_NAME___controller.list)
+
+export default { router, prefix }

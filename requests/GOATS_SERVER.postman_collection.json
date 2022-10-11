@@ -1,0 +1,522 @@
+{
+	"info": {
+		"_postman_id": "94e09d4a-3fc1-435f-8e4d-aab99c104cfc",
+		"name": "GOATS_SERVER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "RESET PASSWORD",
+					"item": [
+						{
+							"name": "RESET PASSWORD REQUEST",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"www.edgar.pachinsky@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_3}}/user/reset-password",
+									"host": [
+										"{{HOST_3}}"
+									],
+									"path": [
+										"user",
+										"reset-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RESET PASSWORD LINK CHECK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"link\":\"pkVEPRiGcSFfJQcPxVFmNIfGoGzcQMiuBjOIGeEsRKiRzgPkkaABtgNzhsjQmIgBKMffPrZJlyuzFrgbFTFoWFNJwFSIDieTdufR\"\r\n}"
+								},
+								"url": {
+									"raw": "{{HOST_3}}/user/reset-password-link-check",
+									"host": [
+										"{{HOST_3}}"
+									],
+									"path": [
+										"user",
+										"reset-password-link-check"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "REST PASSWORD MAIN",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"link\":\"YgGDMJQDfvBvwgLirFXGjspqismqbqOenkfOuNKjfBmKJuCIHYWEjfxctxTVgbEvDuNELieqoVSIIdmIbVTWEsGIaRrXdaYpNQcd\",\r\n    \"password\":\"7777hopar7777\"\r\n}"
+								},
+								"url": {
+									"raw": "{{HOST_3}}/user/reset-password-main",
+									"host": [
+										"{{HOST_3}}"
+									],
+									"path": [
+										"user",
+										"reset-password-main"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "USER ACTIONS",
+					"item": [
+						{
+							"name": "DEVICE",
+							"item": [
+								{
+									"name": "DEVICE HISTORY",
+									"item": [
+										{
+											"name": "LIST",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{HOST_3}}/history/list",
+													"host": [
+														"{{HOST_3}}"
+													],
+													"path": [
+														"history",
+														"list"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "ADD/EDIT",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"device\":\"61a7df71272dc338cc9c4c53\",\r\n    \"goatId\":\"2\",\r\n    \"weight\":\"200\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{HOST_3}}/history/save",
+													"host": [
+														"{{HOST_3}}"
+													],
+													"path": [
+														"history",
+														"save"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "DELETE",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"_id\":\"61a7dadf6d48f32e340df07d\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{HOST_3}}/device/delete",
+													"host": [
+														"{{HOST_3}}"
+													],
+													"path": [
+														"device",
+														"delete"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "HISTORY BY ANIMAL",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{HOST_3}}/history/by-animal/61a7df71272dc338cc9c4c53/1",
+													"host": [
+														"{{HOST_3}}"
+													],
+													"path": [
+														"history",
+														"by-animal",
+														"61a7df71272dc338cc9c4c53",
+														"1"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "LIST",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{HOST_3}}/device/list",
+											"host": [
+												"{{HOST_3}}"
+											],
+											"path": [
+												"device",
+												"list"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ADD/EDIT",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \r\n    \"name\":\"farm1_device\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{HOST_3}}/device/save",
+											"host": [
+												"{{HOST_3}}"
+											],
+											"path": [
+												"device",
+												"save"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DELETE",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_id\":\"61a7db3f6d48f32e340df089\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{HOST_3}}/device/delete",
+											"host": [
+												"{{HOST_3}}"
+											],
+											"path": [
+												"device",
+												"delete"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET DEVICE HISTORY",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{HOST_3}}/device/history/61a7df71272dc338cc9c4c53",
+											"host": [
+												"{{HOST_3}}"
+											],
+											"path": [
+												"device",
+												"history",
+												"61a7df71272dc338cc9c4c53"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "LOGIN USER (GET TOKEN)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"77777hopar77777\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_3}}/user/login",
+									"host": [
+										"{{HOST_3}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CHECK TOKEN",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxYTUyY2Y0ZmQ4ZTBkMWIzMDIzZmVmYyIsImlzRGlzYWJsZWQiOmZhbHNlLCJhdmF0YXIiOm51bGwsImZ1bGxOYW1lIjoiRWRnYXIgUGFjaGluc2t5IiwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoid3d3LmVkZ2FyLnBhY2hpbnNreUBnbWFpbC5jb20ifSwiaWF0IjoxNjM4MjE0OTA0LCJleHAiOjE2MzgyMTg1MDR9.1redhJpB5tnD1oGSS9m8CjPNNZLrgQpHzIu5-4zn3v0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjU0MmZlNzFmYzRjMjQ2ODM4YWQxNyIsImlzRGlzYWJsZWQiOmZhbHNlLCJmdWxsTmFtZSI6IkVkZ2FyIFBhY2hpbnNreSIsInVzZXJuYW1lIjoiSmV0U3RyZWFtIiwiZW1haWwiOiJlZGdhci5wYWNoaW5za3lAZ21haWwuY29tIn0sImlhdCI6MTYyNjg0OTE5NywiZXhwIjoxNjI2ODUyNzk3fQ.oS4Kke_18hXESRYRezZo7TU08SLUR1fe9LAlHJbwFCc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_3}}/user/check-token",
+									"host": [
+										"{{HOST_3}}"
+									],
+									"path": [
+										"user",
+										"check-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ADD/EDIT USER",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"61a68213b443161a08abba1b\",\r\n    \"device\": [\"61a7df71272dc338cc9c4c53\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_3}}/user/save",
+									"host": [
+										"{{HOST_3}}"
+									],
+									"path": [
+										"user",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIST USERS",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{HOST_3}}/user/list",
+									"host": [
+										"{{HOST_3}}"
+									],
+									"path": [
+										"user",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE USER",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\":\"61a6808ea83e1501f8abb41a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_3}}/user/delete",
+									"host": [
+										"{{HOST_3}}"
+									],
+									"path": [
+										"user",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET USER",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{HOST_3}}/user/get/61a68213b443161a08abba1b",
+									"host": [
+										"{{HOST_3}}"
+									],
+									"path": [
+										"user",
+										"get",
+										"61a68213b443161a08abba1b"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
