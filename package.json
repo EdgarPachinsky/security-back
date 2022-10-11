@@ -4,6 +4,7 @@
   "description": "deep learning of node",
   "main": "index.js",
   "scripts": {
+    "start": "node app",
     "server-dev-watch": "nodemon app.js",
     "server-dev": "node app.js",
     "db_seed": "node ./db/db_seed.js",

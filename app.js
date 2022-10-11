@@ -18,7 +18,7 @@ const app = express()
 const runOnIp = process.env.npm_config_ip || false
 let host = '127.0.0.1' // default localhost
 
-const port = process.env.npm_config_port || 3000
+const port = process.env.PORT || 3000
 const socketPort = process.env.npm_config_socetport || 8080
 if(runOnIp === 'true')
     host = ip.address()
@@ -62,13 +62,13 @@ app.listen(port , (err) => {
             connection.connect().then(() => {
 
                 console.log(`CONNECTED TO DB -> ${connection.connectionStr()}`)
-                socket.serverListen(socketPort, host).then(() => {
-
-                    console.log(`SOCKET STARTED -> ${host}:${socketPort}`)
-                }).catch( (err) => {
-                    console.log(`SOCKET START FAIL -> ${err.message}`)
-                    // helper.exitApp(0,err.message?err.message:err)
-                })
+                // socket.serverListen(socketPort, host).then(() => {
+                //
+                //     console.log(`SOCKET STARTED -> ${host}:${socketPort}`)
+                // }).catch( (err) => {
+                //     console.log(`SOCKET START FAIL -> ${err.message}`)
+                //     // helper.exitApp(0,err.message?err.message:err)
+                // })
             }).catch( (err) => {
                 console.log(`CONNECT TO DB FAILED -> ${connection.connectionStr()}`)
                 // helper.exitApp(0,err.message?err.message:err)
