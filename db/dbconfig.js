@@ -1,3 +1,4 @@
+// uncomment to connect to local db
 // export default {
 //   db_host: "localhost",
 //   db_port: "27017",
@@ -5,11 +6,12 @@
 //   db_prefix: "mongodb://"
 // }
 
+// fill to connect to remote db
 export default {
-  db_host: "morscluster.xso7o.mongodb.net",
+  db_host: "",
   db_port: "",
-  db_name: "security",
-  db_user: "mors",
-  db_pass: "77777hopar77777",
-  db_prefix: "mongodb+srv://"
+  db_name: "",
+  db_user: "",
+  db_pass: "",
+  db_prefix: ""
 }

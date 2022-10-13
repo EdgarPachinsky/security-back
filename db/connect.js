@@ -4,7 +4,9 @@ import db_config from "../db/dbconfig.js"
 import db_config_additional from "../db/dbconfig_additional.js"
 import constants from "../app/constant/constants.js";
 
+// local db connection string
 // const connectionString = `${db_config.db_prefix}${db_config.db_host}:${db_config.db_port}/${db_config.db_name}`
+// remote db connection string
 const connectionString = `${db_config.db_prefix}${db_config.db_user}:${db_config.db_pass}@${db_config.db_host}/${db_config.db_name}?retryWrites=true&w=majority`
 
 // EXPORT FUNCTION FOR DB CONNECTION TO USE IN INDEX.JS FILE
